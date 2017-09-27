@@ -28,6 +28,7 @@ public class Main {
 //        @Service 业务层
 //        @Component 公共组件
 //        @Controller 控制用户请求 SpringMVC
+//        AOP aspect orient programing 统一组织代码 拦截某些方法执行前后 做一些操作
         UserController userController = context.getBean(UserController.class);
         UserService userService = userController.getUserService();
         userService.say();
