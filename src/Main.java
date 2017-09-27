@@ -15,7 +15,7 @@ public class Main {
     public static  void main (String[] args) {
 
         ApplicationContext context = new ClassPathXmlApplicationContext("./top/aiprogram/resource/application-context.xml");
-        User user = context.getBean(User.class);            //class名称,application-context里没有设置bean名称也能用
+        User user = context.getBean(User.class);            //class名称,application-context里需设置bean名称
         System.out.println(user.getId());
         System.out.println(user.getName());
         System.out.println(user.getList());
@@ -31,7 +31,7 @@ public class Main {
 //        AOP aspect orient programing 统一组织代码 拦截某些方法执行前后 做一些操作
         UserController userController = context.getBean(UserController.class);
         UserService userService = userController.getUserService();
-        userService.say();
+        userService.say("hello world");
 
 
     }

@@ -8,7 +8,8 @@ import org.springframework.stereotype.Service;
 @Service("myUserService")
 public class UserServiceImpl implements UserService{
     @Override
-    public void say() {
-        System.out.println("UserServiceImpl.say");
+    public String say(String value) {
+        System.out.println(value);
+        return "succeed";
     }
 }
