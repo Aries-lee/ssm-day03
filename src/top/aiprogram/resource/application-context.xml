@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd"
+       xmlns:context="http://www.springframework.org/schema/context"
+
+>
+    <context:component-scan base-package="top.aiprogram.**"></context:component-scan>
+    <bean id="user" class="top.aiprogram.entity.User">
+        <!--是反射，根据构造器拿参数-->
+        <!--<constructor-arg type="int" value="12"></constructor-arg>-->
+        <!--<constructor-arg type="java.lang.String" value="laoli"></constructor-arg>-->
+        <property name="id" value="18"></property>
+        <property name="name" value="laowang"></property>
+        <property name="list">
+            <list>
+                <value>hello</value>
+                <value>are</value>
+                <value>u</value>
+                <value>ok</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="userFather" class="top.aiprogram.entity.UserFather">
+        <property name="fatherName" value="father"></property>
+        <property name="user" ref="user"></property>
+    </bean>
+
+</beans>
