@@ -34,6 +34,12 @@
         <property name="user" ref="user"></property>
     </bean>
 
-<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+    <bean id="logger" class="top.aiprogram.aop.Logger"/>
+
+<aop:config>
+    <aop:aspect id="logAspect" ref="logger">
+        <aop:around method="doLog" pointcut="execution(* top.aiprogram.service.*.*(..))"/>
+    </aop:aspect>
+</aop:config>
 
 </beans>
